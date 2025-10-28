@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://homeputers.github.io/sitemap.xml
