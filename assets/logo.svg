@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Homeputers logo</title>
+  <desc id="desc">Stylized turquoise letter H inside a rounded dark square</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1116" />
+      <stop offset="100%" stop-color="#1b242f" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)" />
+  <path fill="#00C9A7" d="M36 28h16v24h16V28h16v64H68V68H52v24H36z" />
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#00C9A7" stroke-width="4" opacity="0.4" />
+</svg>

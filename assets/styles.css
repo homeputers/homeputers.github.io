@@ -1,0 +1,33 @@
+:root {
+  --bg: #0e1116;
+  --card: #151a21;
+  --text: #e9eef5;
+  --muted: #a8b3c7;
+  --accent: #00C9A7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text); background: var(--bg);
+}
+.site-header {
+  display: flex; align-items: center; gap: 16px; padding: 32px 20px; max-width: 1000px; margin: 0 auto;
+}
+.logo { width: 56px; height: 56px; }
+h1 { margin: 0; font-size: 2rem; }
+.tagline { margin: 4px 0 0; color: var(--muted); }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px 60px; }
+section { background: var(--card); padding: 24px; border-radius: 16px; margin: 16px 0; }
+h2 { margin-top: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.pill-list { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 0; list-style: none; }
+.pill-list li { padding: 6px 10px; border: 1px solid #2b3340; border-radius: 999px; background: #0f141b; color: var(--text); }
+.site-footer { color: var(--muted); max-width: 1000px; margin: 24px auto 40px; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.site-footer nav { display: flex; gap: 16px; }
+@media (prefers-color-scheme: light) {
+  body { background: #ffffff; color: #0f1720; }
+  .site-header, .site-footer { color: #334155; }
+  section { background: #f7fafc; }
+  .pill-list li { background: #fff; border-color: #e5e7eb; color: #111827; }
+}
