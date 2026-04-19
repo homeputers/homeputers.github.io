@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Terms of Service — Homeputers" description="Homeputers LLC terms of service.">
+  <Header />
+
+  <main class="section">
+    <div class="container">
+      <div class="page-header">
+        <p class="section-label">Legal</p>
+        <h1 class="page-title">Terms of Service</h1>
+        <p class="page-date">Last updated: January 2025</p>
+      </div>
+
+      <article class="prose">
+        <h2>Overview</h2>
+        <p>
+          Homeputers LLC provides software development, infrastructure, and consulting services under
+          mutually executed statements of work or service agreements. By contacting us or engaging our
+          services, you agree that any formal engagement will be governed by a written agreement signed
+          by both parties.
+        </p>
+
+        <h2>Services</h2>
+        <p>
+          All services are provided on a project, retainer, or advisory basis as defined in individual
+          engagement agreements. Scope, deliverables, timelines, and fees are set forth in each statement
+          of work.
+        </p>
+
+        <h2>Intellectual property</h2>
+        <p>
+          Unless otherwise specified in an engagement agreement, client-specific work product developed
+          under a paid engagement is owned by the client upon full payment. Pre-existing tools, frameworks,
+          and methodologies remain the property of Homeputers LLC.
+        </p>
+
+        <h2>Limitation of liability</h2>
+        <p>
+          Homeputers LLC's liability shall not exceed the total fees paid under the applicable engagement
+          agreement. We are not liable for indirect, incidental, or consequential damages.
+        </p>
+
+        <h2>Governing law</h2>
+        <p>
+          These terms and any engagement agreements shall be governed by the laws of the applicable
+          jurisdiction as specified in the engagement agreement.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For questions about these terms, please contact us at <a href="mailto:info@homeputers.com">info@homeputers.com</a>.
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 56px;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #f1f5f9;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    margin-top: 12px;
+  }
+
+  .page-date {
+    font-size: 0.875rem;
+    color: var(--text-faint);
+  }
+
+  .prose {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .prose h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 10px;
+  }
+
+  .prose p {
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .prose a {
+    color: var(--accent);
+  }
+</style>

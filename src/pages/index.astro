@@ -1,0 +1,437 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    icon: '☕',
+    title: 'Java / Spring Boot',
+    desc: 'Production-grade REST APIs and microservices built with Spring Boot, Spring Security, and cloud-native patterns.',
+  },
+  {
+    icon: '⚡',
+    title: 'Node.js / TypeScript / React',
+    desc: 'Full-stack web applications with modern TypeScript, React, and Node.js — from MVP to scale.',
+  },
+  {
+    icon: '🔁',
+    title: 'CI/CD & DevOps',
+    desc: 'GitHub Actions pipelines, Docker containers, and automated deployments to keep your team shipping fast.',
+  },
+  {
+    icon: '📡',
+    title: 'Observability',
+    desc: 'OpenTelemetry instrumentation, distributed tracing, and metrics dashboards so you always know what\'s happening.',
+  },
+  {
+    icon: '☁️',
+    title: 'Cloud Infrastructure',
+    desc: 'Infrastructure-as-code, cost optimization, and cloud automation across AWS, GCP, and Azure.',
+  },
+  {
+    icon: '🏠',
+    title: 'Edge & Home Lab',
+    desc: 'Raspberry Pi clusters, IoT integrations, and self-hosted solutions for edge computing and home automation.',
+  },
+];
+
+const engagements = [
+  {
+    title: 'Fractional Engineering',
+    desc: 'Embedded senior engineering capacity without the cost of a full-time hire. Ideal for startups and growing teams.',
+    badge: 'Most popular',
+  },
+  {
+    title: 'Project Delivery',
+    desc: 'End-to-end ownership of a defined scope — from design through deployment, on time and on budget.',
+    badge: null,
+  },
+  {
+    title: 'Platform Enablement',
+    desc: 'Uplift your existing team with tooling, automation, and best practices that compound over time.',
+    badge: null,
+  },
+  {
+    title: 'Advisory',
+    desc: 'Technical strategy, architecture review, and hands-on guidance for critical decisions.',
+    badge: null,
+  },
+];
+---
+<BaseLayout title="Homeputers — Software & Infrastructure Consulting" description="Homeputers LLC designs and builds custom systems, automation pipelines, and cloud infrastructure for ambitious teams.">
+  <Header />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge">Available for new engagements</div>
+      <h1 class="hero-title">
+        From coffee to code<br />to cloud to home.
+      </h1>
+      <p class="hero-sub">
+        Homeputers LLC delivers custom software, cloud infrastructure, and automation pipelines — built with care, shipped with confidence.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:info@homeputers.com" class="btn-primary">Start a conversation</a>
+        <a href="#services" class="btn-ghost">See what we do ↓</a>
+      </div>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="section-label">What we do</p>
+      <h2 class="section-title">Full-stack expertise, end to end.</h2>
+      <p class="section-subtitle">
+        We combine deep engineering skills across the entire stack — from backend APIs to cloud infrastructure to home-lab hardware.
+      </p>
+
+      <div class="services-grid">
+        {services.map(s => (
+          <article class="service-card">
+            <div class="service-icon">{s.icon}</div>
+            <h3 class="service-title">{s.title}</h3>
+            <p class="service-desc">{s.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Engagements -->
+  <section class="section" id="engagements">
+    <div class="container">
+      <p class="section-label">How we work</p>
+      <h2 class="section-title">Flexible engagements built for your team.</h2>
+      <p class="section-subtitle">
+        Whether you need a hands-on engineering partner or strategic technical guidance, we have a model that fits.
+      </p>
+
+      <div class="engage-grid">
+        {engagements.map(e => (
+          <article class="engage-card">
+            {e.badge && <span class="engage-badge">{e.badge}</span>}
+            <h3 class="engage-title">{e.title}</h3>
+            <p class="engage-desc">{e.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-copy">
+        <p class="section-label">Get in touch</p>
+        <h2 class="section-title">Let's build something great.</h2>
+        <p class="section-subtitle">
+          Tell us about your project. We'll respond within one business day and can usually kick off within two weeks.
+        </p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <p class="contact-label">Email</p>
+            <a href="mailto:info@homeputers.com" class="contact-value">info@homeputers.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <p class="contact-label">Based in</p>
+            <p class="contact-value-plain">United States</p>
+          </div>
+        </div>
+        <a href="mailto:info@homeputers.com" class="btn-primary contact-btn">Send us a message</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 80px;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid rgba(45, 212, 191, 0.25);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badge::before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    font-weight: 800;
+    color: #f1f5f9;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #061010;
+    background: var(--accent);
+    padding: 12px 26px;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.25);
+  }
+
+  .btn-primary:hover {
+    background: #5eead4;
+    transform: translateY(-2px);
+    box-shadow: 0 0 32px rgba(45, 212, 191, 0.4);
+    text-decoration: none;
+    color: #061010;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+
+  .btn-ghost:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--accent-glow);
+    text-decoration: none;
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+  }
+
+  .service-card:hover {
+    border-color: rgba(45, 212, 191, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+
+  .service-icon {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .service-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* Engagements */
+  .engage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .engage-card {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+
+  .engage-card:hover {
+    border-color: rgba(45, 212, 191, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .engage-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    background: var(--accent-glow);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+
+  .engage-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 10px;
+  }
+
+  .engage-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* Contact */
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+    margin-top: 2px;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .contact-value-plain {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
